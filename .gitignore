@@ -124,3 +124,9 @@ _modules/*
 
 /results/
 /phpunit*.xml
+
+# Ignore Tailwind binaries and configs
+tailwindcss.exe
+tailwindcss.exe.exe
+tailwind.config.js
+postcss.config.js
