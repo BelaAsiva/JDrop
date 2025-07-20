@@ -94,14 +94,17 @@ class Pengambilan extends BaseController
 
         foreach ($userDlh as $dlh) {
             $notifModel->insert([
-                'user_id' => $dlh->id,
-                'judul' => 'Pengajuan Pengambilan Baru',
-                'pesan' => 'Sekolah ' . $namaSekolah . ' mengajukan pengambilan bulan ' . $bulan,
-                'dibaca' => 0,
-                'waktu_kirim' => date('Y-m-d H:i:s'),
+                'user_id'        => $dlh->id,
+                'judul'          => 'Pengajuan Pengambilan Baru',
+                'pesan'          => 'Sekolah ' . $namaSekolah . ' mengajukan pengambilan bulan ' . $bulan,
+                'dibaca'         => 0,
+                'waktu_kirim'    => date('Y-m-d H:i:s'),
+                'pengirim_role'  => 'sekolah',
+                'penerima_role'  => 'dlh'
             ]);
         }
 
         return redirect()->to('/admin-sekolah/pengambilan')->with('success', 'Pengajuan berhasil dikirim.');
     }
+
 }

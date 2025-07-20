@@ -4,6 +4,12 @@
 <div class="container mt-4">
     <h3 class="mb-4">📋 Log Aktivitas & Login</h3>
 
+    <div class="d-flex justify-content-between mb-3 flex-wrap gap-2">
+    <a href="<?= base_url('admin-dlh/dashboard') ?>" class="btn btn-outline-primary">
+      🏠 Dashboard
+    </a>
+    </div>
+
     <div class="card mb-4">
         <div class="card-header bg-primary text-white">
             🕒 Log Aktivitas Pengguna
@@ -22,7 +28,7 @@
                     <?php foreach ($logAktivitas as $i => $log): ?>
                     <tr>
                         <td><?= $i + 1 ?></td>
-                        <td><?= esc($log['nama_lengkap']) ?></td>
+                        <td><?= esc($log['nama_pengguna']) ?></td>
                         <td><?= esc($log['aksi']) ?></td>
                         <td><?= $log['waktu'] ?></td>
                     </tr>
@@ -51,7 +57,7 @@
                     <?php foreach ($logLogin as $i => $log): ?>
                     <tr>
                         <td><?= $i + 1 ?></td>
-                        <td><?= esc($log['nama_lengkap']) ?></td>
+                        <td><?= esc($log['username']) ?></td>
                         <td><?= $log['waktu_login'] ?></td>
                         <td><?= esc($log['ip_address']) ?></td>
                         <td><small><?= esc($log['user_agent']) ?></small></td>

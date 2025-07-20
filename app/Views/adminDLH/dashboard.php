@@ -18,8 +18,8 @@
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
   }
 
-  .notif-list {
-    max-height: 260px;
+  .notif-body-scroll {
+    max-height: 200px; /* Biar tingginya segaris dengan kartu total */
     overflow-y: auto;
     padding-right: 10px;
   }
@@ -40,10 +40,7 @@
           ✅ Validasi Sekolah
         </a>
         <a href="<?= base_url('admin-dlh/log') ?>" class="btn btn-outline-primary">
-          📚 Log Aktivitas
-        </a>
-        <a href="<?= base_url('admin-dlh/log-login') ?>" class="btn btn-outline-primary">
-          🔐 Log Login
+          📚 Riwayat Log 
         </a>
       </div>
 
@@ -79,7 +76,7 @@
         <div class="card-header bg-gradient-blue">
           <h5 class="mb-0">🔔 Notifikasi Terbaru</h5>
         </div>
-        <div class="card-body notif-list">
+        <div class="card-body notif-body-scroll">
           <?php if (!empty($notifikasi)): ?>
             <ul class="list-group list-group-flush">
               <?php foreach ($notifikasi as $n): ?>
@@ -100,7 +97,7 @@
       </div>
     </div>
 
-    <!-- Peringkat Sekolah Berdasarkan Setoran Terbanyak -->
+    <!-- Peringkat Sekolah -->
     <div class="card shadow-sm mt-4">
       <div class="card-body">
         <h5 class="card-title">🏆 Peringkat Sekolah Berdasarkan Total Jelantah</h5>

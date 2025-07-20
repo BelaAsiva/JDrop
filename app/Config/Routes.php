@@ -91,6 +91,7 @@ $routes->group('admin-sekolah', ['namespace' => 'App\Controllers\AdminSekolah'],
 });
 
 $routes->group('admin-dlh', ['namespace' => 'App\Controllers\AdminDLH'], function($routes) {
+    // Sekolah
     $routes->get('sekolah', 'Sekolah::index');
     $routes->get('sekolah/create', 'Sekolah::create');
     $routes->post('sekolah/store', 'Sekolah::store');
@@ -98,21 +99,33 @@ $routes->group('admin-dlh', ['namespace' => 'App\Controllers\AdminDLH'], functio
     $routes->post('sekolah/update/(:num)', 'Sekolah::update/$1');
     $routes->post('sekolah/delete/(:num)', 'Sekolah::delete/$1');
 
+    // Pengambilan
     $routes->get('pengambilan', 'Pengambilan::index');
     $routes->get('pengambilan/validasi/(:num)', 'Pengambilan::validasi/$1');
     $routes->get('pengambilan/batalkan/(:num)', 'Pengambilan::batalkan/$1');
 
+    // Dashboard & Log
     $routes->get('dashboard', 'Dashboard::index');
-    $routes->get('log', 'Log::index');
-    $routes->get('log-login', 'Log::login');
+
+    // Log (✅ yang benar dan rapi)
+    $routes->get('log', 'Log::index'); // redirect ke login
+    $routes->get('log/login', 'Log::login');
+    $routes->get('log/aktivitas', 'Log::aktivitas');
+
+    // Notifikasi
     $routes->get('notifikasi', 'Notifikasi::index');
+    $routes->get('notifikasi/detail/(:num)', 'Notifikasi::detail/$1'); // tampilkan detail
+    $routes->post('notifikasi/balas/(:num)', 'Notifikasi::balas/$1');  // kirim balasan
+    $routes->post('notifikasi/kirim', 'Notifikasi::kirim');
+
+
+    // Rekapitulasi
     $routes->get('rekapitulasi', 'Rekapitulasi::index');
     $routes->get('rekapitulasi/export/excel', 'Rekapitulasi::exportExcel'); 
     $routes->get('rekapitulasi/export/pdf', 'Rekapitulasi::exportPDF');
-    $routes->get('validasi-sekolah', 'ValidasiSekolah::index');
+
+    // Validasi Sekolah
     $routes->get('validasi-sekolah', 'ValidasiSekolah::index');
     $routes->post('validasi-sekolah/aktifkan/(:num)', 'ValidasiSekolah::aktifkan/$1');
     $routes->post('validasi-sekolah/nonaktifkan/(:num)', 'ValidasiSekolah::nonaktifkan/$1');
 });
-
-

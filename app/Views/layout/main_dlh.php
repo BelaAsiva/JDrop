@@ -92,7 +92,7 @@
       </div>
     </div>
     <div class="header-icons">
-      <a href="<?= base_url('admin-sekolah/notifikasi') ?>" title="Notifikasi"><i class="bi bi-bell-fill"></i></a>
+      <a href="<?= base_url('admin-dlh/notifikasi') ?>" title="Notifikasi"><i class="bi bi-bell-fill"></i></a>
       <a href="<?= base_url('/logout') ?>" title="Logout"><i class="bi bi-box-arrow-right"></i></a>
     </div>
   </div>

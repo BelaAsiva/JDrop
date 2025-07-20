@@ -118,7 +118,7 @@
     </div>
 
     <div class="header-icons">
-      <a href="<?= base_url('admin-dlh/notifikasi') ?>" title="Notifikasi">
+      <a href="<?= base_url('admin-sekolah/notifikasi') ?>" title="Notifikasi">
         <i class="bi bi-bell-fill"></i>
         <?php if (!empty($jumlahNotif)) : ?>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge-notif">

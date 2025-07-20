@@ -11,7 +11,7 @@ class LogLoginModel extends Model
 
     public function getWithUser()
     {
-        return $this->select('log_login.*, users.nama_lengkap')
+        return $this->select('log_login.*, users.username')
                     ->join('users', 'users.id = log_login.user_id')
                     ->orderBy('waktu_login', 'DESC')
                     ->findAll();
